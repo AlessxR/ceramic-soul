@@ -1,4 +1,5 @@
-@use "/src/sass/libs/modern-normalize.min.css"; // Импортируем файл в scss
+// Импортируем файл в scss
+@use "/src/sass/libs/modern-normalize.min.css";
 @use "/src/sass/libs/fontello.css";
 
 // Его не буду юзать, ибо установил плагин postcss pxtorem
@@ -6,64 +7,12 @@
 
 // Подключение переменных
 @use "/src/sass/base/variables.scss" as *;
+@use "/src/sass/base/basic.scss";
 
-h1,
-h2,
-h3,
-h4,
-h5,
-figure,
-p,
-ol,
-ul {
-	margin: 0;
-}
+// Импорт ui-компонентов
+@use "/src/sass/ui/titles.scss";
+@use "/src/sass/ui/buttons.scss";
 
-ol[role="list"],
-ul[role="list"] {
-	list-style: none;
-	padding-inline: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-	font-size: inherit;
-	font-weight: inherit;
-}
-
-img {
-	display: block;
-	max-inline-size: 100%;
-}
-
-// :root {
-// 	--light-color: #f5f5f7;
-// 	--dark-color: #221f20;
-// 	--container-padding-inline: 13%;
-// 	--footer-padding-inline: 10%;
-// 	@media screen and (max-width: 768px) {
-// 		--container-padding-inline: 6%;
-// 		--footer-padding-inline: 6%;
-// 	}
-// 	@media screen and (max-width: 576px) {
-// 		--container-padding-inline: 15px;
-// 		--footer-padding-inline: 15px;
-// 	}
-// }
-
-html {
-	font-family: "Barlow", sans-serif;
-	scroll-behavior: smooth;
-    //font-size: 62.5%; // 1rem = 10px
-}
-
-span {
-    //font-size: pxtorem.rem(32); // Преобразует px -> rem
-    color: $ui-error;
-    font-size: 32px;
-    width: 400px;
-    height: 200px;
-}
+// Импортируем стили секций, блоков
+@use "/src/sass/blocks/header.scss";
+@use "/src/sass/blocks/promo.scss";
