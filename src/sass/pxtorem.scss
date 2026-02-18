@@ -1,6 +1,9 @@
 @use "sass:math";
 
+// Принимает px
 @function rem($pixel) {
+
+    // Перевод в rem
 	@if math.is-unitless($pixel) {
 		@return math.div($pixel, 16) + rem;
 	} @else {

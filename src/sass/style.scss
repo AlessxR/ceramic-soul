@@ -1,3 +1,12 @@
+@use "/src/sass/libs/modern-normalize.min.css"; // Импортируем файл в scss
+@use "/src/sass/libs/fontello.css";
+
+// Его не буду юзать, ибо установил плагин postcss pxtorem
+@use "/src/sass/pxtorem.scss";
+
+// Подключение переменных
+@use "/src/sass/base/variables.scss" as *;
+
 h1,
 h2,
 h3,
@@ -48,4 +57,13 @@ img {
 html {
 	font-family: "Barlow", sans-serif;
 	scroll-behavior: smooth;
+    //font-size: 62.5%; // 1rem = 10px
+}
+
+span {
+    //font-size: pxtorem.rem(32); // Преобразует px -> rem
+    color: $ui-error;
+    font-size: 32px;
+    width: 400px;
+    height: 200px;
 }
