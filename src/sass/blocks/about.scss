@@ -1,0 +1,121 @@
+.about {
+
+    &__title {
+        margin-top: 60px;
+    }
+
+    &__descr {
+        margin-top: 60px;
+    }
+
+    &__img {
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &__text {
+        margin: 40px 0 60px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__wrapper {
+        display: flex;
+        margin-bottom: 60px;
+    }
+
+    &__form {
+        &_title {
+            margin-bottom: 66px;
+        }
+
+        &-content {
+            fieldset {
+                border: none;
+                padding: 0;
+            }
+        }
+
+        &-image {
+            display: none;
+        }
+
+        &_img {
+            display: none;
+        }
+
+        form {
+            border: none;
+
+            img {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about {
+
+        &__input, &__textarea {
+            width: 300px;
+        }
+
+        &__form {
+            form {
+                img {
+                    visibility: visible;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .about {
+        &__descr {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        &__wrapper {
+            gap: 40px;
+        }
+
+        &__form {
+            &_img {
+                display: block;
+                width: 50%;
+            }
+            &-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            &-image {
+                display: block;
+            }
+
+            form {
+                img {
+                    display: block;
+                }
+            }
+        }
+
+        &__img {
+            width: 50%;
+        }
+
+        &__text {
+            margin: 0;
+            width: 50%;
+            justify-content: flex-start;
+        }
+    }
+}
