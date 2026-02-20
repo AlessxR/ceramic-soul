@@ -4,7 +4,7 @@
     padding-top: 70px;
 
     &__wrapper {
-        margin-top: 85px;
+        margin-top: 65px;
     }
 
     &__col {
@@ -12,8 +12,6 @@
     }
 
     &__form {
-        margin-top: 66px;
-
         form {
             .git__form__img {
                 display: none;
@@ -115,6 +113,16 @@
 
             form {
                 position: relative;
+
+                fieldset {
+                    .git__input-block {
+                        width: 300px;
+                    }
+                }
+
+                .git__textarea {
+                    width: 300px;
+                }
 
                 .git__form__img {
                     position: absolute;

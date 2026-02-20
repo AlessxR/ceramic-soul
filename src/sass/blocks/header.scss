@@ -32,6 +32,62 @@
     &__nav {
         display: none;
     }
+
+    &__menu {
+        padding: 50px 10px;
+        position: fixed;
+        top: 0;
+        left: -100vw; // Тоже влево отодвинули
+        width: 100vw; // Отталкиваемся от монитора
+        height: 100vh;
+        background-color: $light;
+        //transform: translateX(-100vw); // Отодвигаем влево на 100%
+        transition: all .5s;
+        opacity: 0;
+        &_active {
+            transform: translateX(100%); // Возвращаем в изначальное положение
+            opacity: 1;
+        }
+
+        &-close {
+            width: 20px;
+            height: 20px;
+            span {
+                display: block;
+                width: 20px;
+                height: 1px;
+                background-color: $dark;
+
+                &:nth-child(1) {
+                    transform: translateY(8px) rotate(45deg); // Вращаем первый элемент на 45 градусов
+                }
+                &:nth-child(2) {
+                    transform: translateY(8px) rotate(-45deg); // Вращаем первый элемент на 45 градусов
+                }
+            }
+        }
+
+        &-nav {
+            margin-top: 50px;
+            padding-left: 14px;
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                padding: 0;
+                list-style: none;
+
+                a {
+                    width: 50%;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: $dark;
+                    font-weight: 400;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
 }
 
 .burger {
@@ -72,6 +128,10 @@
             text-transform: uppercase;
             color: $dark;
             text-decoration: none;
+        }
+
+        &__menu {
+            display: none;
         }
     }
 
