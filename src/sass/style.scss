@@ -8,6 +8,7 @@
 // Подключение переменных
 @use "/src/sass/base/variables.scss" as *;
 @use "/src/sass/base/basic.scss";
+@use "/src/sass/base/animations.scss";
 
 // Импорт ui-компонентов
 @use "/src/sass/ui/titles.scss";

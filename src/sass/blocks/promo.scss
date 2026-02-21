@@ -69,6 +69,26 @@
         &__title {
             padding-left: 571px;
         }
+
+        &__cta {
+            animation-name: slideIn; // Имя анимации(любое)
+            animation-duration: 3s; // Дление анимации
+            //animation-iteration-count: infinite; // Сколько будет повторяться раз
+        }
+    }
+}
+
+@keyframes slideIn {
+    // start point
+    0% {
+        transform: translateX(100%); // right
+        //opacity: 0;
+    }
+
+    // final point
+    100% {
+        transform: translateX(0); // default
+        //opacity: 0;
     }
 }
 
