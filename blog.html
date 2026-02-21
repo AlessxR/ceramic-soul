@@ -138,18 +138,21 @@
             <div class="footer__block_news">
                 <h2 class="title-h3 footer-h3">newsletter</h2>
                 <p class="footer-info">Keep up to date with news and promotions</p>
-                <form action="#">
+                <form id="footer-form" action="#">
                     <div class="git__input-block footer__input-block">
-                        <input required class="git__input" type="email" id="email" name="email"
+                        <input required class="git__input" type="email" id="footer-email" name="footer-email"
                                placeholder="Enter your email">
+                        <div class="error-message"></div>
                     </div>
 
-                    <label class="git__check-block footer__check-block" for="checkbox">
-                        <input required class="git__checkbox" type="checkbox" name="checkbox" id="checkbox">
+
+                    <label class="git__check-block footer__check-block" for="footer-checkbox">
+                        <input required class="git__checkbox" type="checkbox" name="footer-checkbox" id="footer-checkbox">
                         I agree with the <a href="#">terms</a>
                     </label>
+                    <div class="footer-checkbox-error-message"></div>
+                    <button type="submit" class="btn-send footer_btn ">submit</button>
                 </form>
-                <button class="btn-send footer_btn ">submit</button>
             </div>
 
             <div class="footer__wrapper">

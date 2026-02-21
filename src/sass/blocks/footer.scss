@@ -5,6 +5,12 @@
     background-color: $dark;
     min-height: 425px;
 
+    .just-validate-error-field {
+        border: 1px solid $ui-error;
+    }
+
+
+
     &-info {
         color: $light;
         margin: 40px 0 40px 0;

@@ -58,8 +58,8 @@ const swiper = new Swiper('.works__slider', {
         clickable: true,
     },
     navigation: {
-        nextEl: '.icon-left-open',
-        prevEl: '.icon-right-open',
+        nextEl: '.icon-right-open',
+        prevEl: '.icon-left-open',
     },
     breakpoints: {
 
@@ -120,10 +120,42 @@ try {
                 rule: 'required',
             },
         ], {
-            errorsContainer: document.querySelector('#questions').parentElement
-                .parentElement.querySelector(".checkbox-error-message"),
+            errorsContainer: document.querySelector('#questions')
+                .parentElement.parentElement.querySelector(".checkbox-error-message"),
         }
-    );
+    ).onSuccess((event) => {
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: "POST",
+            body: formData,
+        }).then(res => res.json()).then(data => {
+            console.log('Success!', data);
+            form.reset();
+        });
+    });
+
 } catch (e) {
 
+}
+
+try {
+    const footerValidator = new JustValidate('#footer-form');
+
+    footerValidator.addField('#footer-email', [
+        {
+            rule: 'required',
+        },
+        {
+            rule: 'email',
+        }
+    ]).addField('#footer-checkbox', [
+        {
+            rule: 'required',
+        },
+    ], {
+        errorsContainer: document.querySelector('.footer-checkbox-error-message')
+    });
+} catch (e) {
 }
