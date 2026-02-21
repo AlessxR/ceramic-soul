@@ -103,7 +103,7 @@
 </section>
 
 <section class="git">
-<!--    <h2 class="title-h2">get in touch</h2>-->
+    <!--    <h2 class="title-h2">get in touch</h2>-->
     <div class="container">
         <h2 class="title-h2">get in touch</h2>
         <div class="pure-g git__wrapper">
@@ -111,7 +111,7 @@
                 <img src="/src/img/form/tea.jpg" alt="tea">
             </div>
             <div class="pure-u-1 pure-u-lg-3-5 git__form">
-                <form action="#">
+                <form id="form" action="#">
                     <fieldset>
                         <div class="git__input-block">
                             <label class="git__label" for="name">Name</label>
@@ -126,11 +126,13 @@
                     <label class="git__label" for="questions">Your questions</label>
                     <textarea class="git__textarea" id="questions" name="questions"
                               placeholder="Your question"></textarea>
+                    <div class="error-message"></div>
 
                     <label class="git__check-block" for="checkbox">
                         <input required class="git__checkbox" type="checkbox" name="checkbox" id="checkbox">
                         I agree with the <a href="#">terms</a>
                     </label>
+                    <div class="checkbox-error-message"></div>
 
                     <button class="btn-send git__btn">send request</button>
 
@@ -142,7 +144,7 @@
 </section>
 
 <section class="works">
-<!--    <h2 class="title-h2">check out our works</h2>-->
+    <!--    <h2 class="title-h2">check out our works</h2>-->
 
     <div class="container">
         <h2 class="title-h2">check out our works</h2>

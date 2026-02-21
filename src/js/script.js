@@ -10,6 +10,9 @@ import 'swiper/css/pagination';
 
 import "/src/sass/style.scss";
 
+import JustValidate from "just-validate";
+
+// Burger
 const burger = document.querySelector(".burger"),
     close = document.querySelector(".header__menu-close"),
     menu = document.querySelector(".header__menu");
@@ -24,6 +27,7 @@ close.addEventListener("click", () => {
     document.body.style.overflow = "";
 });
 
+// Tabs
 try {
     const tabs = document.querySelectorAll(".catalog__tab");
     const contents = document.querySelectorAll(".catalog__content-item");
@@ -42,8 +46,10 @@ try {
 
     // Показываем первый контент при загрузке
     contents.forEach((c, i) => (c.style.display = i === 0 ? "flex" : "none"));
-} catch (e) {}
+} catch (e) {
+}
 
+// Slider
 const swiper = new Swiper('.works__slider', {
     slidesPerView: 1,
     loop: true,
@@ -66,8 +72,58 @@ const swiper = new Swiper('.works__slider', {
         },
         1920: {
             // Расстояние между слайдами
+            slidesPerView: 3,
             spaceBetween: 35
         },
     },
     modules: [Navigation, Pagination],
 });
+
+// Validate
+try {
+    const validator = new JustValidate('#form');
+
+    validator.addField('#name', [
+            {
+                rule: 'required',
+                errorMessage: 'Please fill the name'
+            },
+            {
+                rule: 'minLength',
+                value: 2,
+                errorMessage: 'Min 2 char!'
+            },
+        ]
+    ).addField('#email', [
+            {
+                rule: 'required',
+            },
+            {
+                rule: "email",
+
+            },
+        ]
+    ).addField('#questions', [
+            {
+                rule: 'required',
+            },
+            {
+                rule: 'minLength',
+                value: 5,
+            },
+        ], {
+            errorsContainer: document.querySelector('#questions')
+                .parentElement.querySelector(".error-message"),
+        }
+    ).addField('#checkbox', [
+            {
+                rule: 'required',
+            },
+        ], {
+            errorsContainer: document.querySelector('#questions').parentElement
+                .parentElement.querySelector(".checkbox-error-message"),
+        }
+    );
+} catch (e) {
+
+}
