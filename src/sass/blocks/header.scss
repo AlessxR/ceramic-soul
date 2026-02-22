@@ -60,10 +60,10 @@
                 background-color: $dark;
 
                 &:nth-child(1) {
-                    transform: translateY(8px) rotate(45deg); // Вращаем первый элемент на 45 градусов
+                    transform: translateY(8px) rotate(47deg); // Вращаем первый элемент на 45 градусов
                 }
                 &:nth-child(2) {
-                    transform: translateY(8px) rotate(-45deg); // Вращаем первый элемент на 45 градусов
+                    transform: translateY(8px) rotate(-48deg); // Вращаем первый элемент на 45 градусов
                 }
             }
         }
